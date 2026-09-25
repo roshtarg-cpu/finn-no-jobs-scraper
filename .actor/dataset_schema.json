@@ -1,0 +1,29 @@
+{
+  "$schema": "https://apify.com/schemas/v1/dataset.ide.json",
+  "actorSpecification": 1,
+  "fields": {
+    "jobUrl": {"type": "string", "title": "Job URL"},
+    "jobTitle": {"type": "string", "title": "Job Title"},
+    "company": {"type": "string", "title": "Company"},
+    "location": {"type": "string", "title": "Location"},
+    "salary": {"type": "string", "title": "Salary"},
+    "jobType": {"type": "string", "title": "Job Type"},
+    "description": {"type": "string", "title": "Description"},
+    "publishedDate": {"type": "string", "title": "Published Date"},
+    "scrapedAt": {"type": "string", "title": "Scraped At"}
+  },
+  "views": {
+    "overview": {
+      "title": "Overview",
+      "transformation": {"fields": ["jobTitle","company","location"]},
+      "display": {
+        "component": "table",
+        "properties": {
+          "jobTitle": {"label":"Job Title","format":"text"},
+          "company": {"label":"Company","format":"text"},
+          "location": {"label":"Location","format":"text"}
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "$schema": "https://apify.com/schemas/v1/input.ide.json",
+  "title": "Finn.no Jobs Scraper Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "searchQuery": {
+      "title": "Search Keywords",
+      "type": "string",
+      "description": "Job title, skills, or keywords to search for",
+      "editor": "textfield",
+      "prefill": ""
+    },
+    "location": {
+      "title": "Location",
+      "type": "string",
+      "description": "Location code (0.20001 = Oslo, 0.20061 = Bergen, leave empty for all Norway)",
+      "editor": "textfield",
+      "prefill": "0.20001"
+    },
+    "jobType": {
+      "title": "Job Type",
+      "type": "string",
+      "description": "Filter by job type",
+      "editor": "select",
+      "enum": ["All", "Fulltime", "Parttime", "Contract", "Freelance"],
+      "prefill": "All"
+    },
+    "sector": {
+      "title": "Sector",
+      "type": "string",
+      "description": "Industry sector filter",
+      "editor": "select",
+      "enum": ["All", "IT", "Sales", "Marketing", "Healthcare", "Education", "Finance", "Engineering"],
+      "prefill": "All"
+    },
+    "maxResults": {
+      "title": "Max Results",
+      "type": "integer",
+      "description": "Maximum number of job listings to scrape",
+      "editor": "number",
+      "minimum": 1,
+      "prefill": 3
+    },
+    "proxyConfiguration": {
+      "title": "Proxy Configuration",
+      "type": "object",
+      "description": "Proxy settings",
+      "editor": "proxy"
+    }
+  },
+  "required": ["maxResults"]
+}
