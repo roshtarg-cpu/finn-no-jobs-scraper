@@ -4,8 +4,7 @@
   "name": "finn-no-jobs-scraper",
   "title": "Finn.no Jobs Scraper - Norwegian Job Board Data Extractor",
   "version": "1.0",
-  "inputSchema": "./input_schema.json",
-  "outputSchema": "./output_schema.json",
-  "storages": {"dataset": "./dataset_schema.json"},
+  "input": "input_schema.json",
+  "outputSchema": "output_schema.json",
   "dockerfile": "./Dockerfile"
 }
