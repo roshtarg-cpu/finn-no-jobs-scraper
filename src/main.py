@@ -35,6 +35,7 @@ async def main():
         location = actor_input.get('location', '')
         job_type = actor_input.get('jobType', 'All')
         max_results = actor_input.get('maxResults', 3)
+        print(f"DEBUG: parsed input - query='{search_query}', location='{location}', type='{job_type}', max={max_results}")
         
         # Build search URL
         params = {}
@@ -55,6 +56,7 @@ async def main():
         if params:
             search_url += f"?{urlencode(params)}"
         
+        print(f"DEBUG: built URL: {search_url}")
         Actor.log.info(f'Search URL: {search_url}')
         
         # Setup proxy if provided
