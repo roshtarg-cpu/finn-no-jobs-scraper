@@ -18,11 +18,14 @@ async def main():
     async with Actor:
         print("DEBUG: inside Actor context")
         # Get input
+        print("DEBUG: getting input...")
         actor_input = await Actor.get_input()
+        print(f"DEBUG: got input: {actor_input}")
         if not actor_input:
             Actor.log.error('No input provided')
-            return
+            actor_input = {}  # Use defaults instead of returning
         
+        print("DEBUG: starting scraper")
         Actor.log.info('Starting Finn.no Jobs scraper...')
         
         # Parse input
