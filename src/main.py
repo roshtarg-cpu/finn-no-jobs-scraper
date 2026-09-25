@@ -26,7 +26,9 @@ async def main():
             actor_input = {}  # Use defaults instead of returning
         
         print("DEBUG: starting scraper")
+        print("DEBUG: about to call Actor.log.info")
         Actor.log.info('Starting Finn.no Jobs scraper...')
+        print("DEBUG: log call succeeded")
         
         # Parse input
         search_query = actor_input.get('searchQuery', '')
